@@ -1,22 +1,11 @@
 Package: tlrapskel
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Tools for RAP Skeleton Development
 Version: 0.1.0
-Authors@R: c(
-    person(
-      "Jane", "Doe",
-      email = "jane@example.com",
-      role = c("aut", "cre")
-    )
-  )
-Description: Provides functions, HTML formatting, Excel 
-    table generation, and branding for NISRA styling. All extracted from the RAP skeleton.
+Authors@R: person("Connor", "Breslin", email = "your@email.com", role = c("aut", "cre"))
+Description: Provides functions, HTML formatting, Excel table generation, and branding for NISRA styling. All extracted from the RAP skeleton.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports:
-    htmltools,
-    openxlsx,
-    janitor,
-    xfun
+Imports: htmltools, openxlsx, janitor, xfun
 RoxygenNote: 7.3.3
