@@ -69,7 +69,7 @@ f_single_excel <- function(title, info, notes = c(NA), df, sheet, tablename,
                  tableName = tablename,
                  withFilter = FALSE,
                  bandedRows = FALSE,
-                 headerStyle = ch,
+                 headerStyle = stylesch,
                  keepNA = TRUE
   )
 
