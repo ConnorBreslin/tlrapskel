@@ -12,6 +12,9 @@
 f_single_excel <- function(title, info, notes = c(NA), df, sheet, tablename,
                            num_cols = NA,
                            pct_cols = NA) {
+
+  styles <- f_styles()
+  
   r <- 1
 
   writeData(new_workbook,
@@ -22,7 +25,7 @@ f_single_excel <- function(title, info, notes = c(NA), df, sheet, tablename,
   )
 
   addStyle(new_workbook, sheet,
-           style = pt,
+           style = styles$pt,
            rows = r,
            cols = 1
   )
@@ -50,7 +53,7 @@ f_single_excel <- function(title, info, notes = c(NA), df, sheet, tablename,
 
     addStyle(new_workbook,
              sheet = sheet,
-             style = pt2,
+             style = styles$pt2,
              rows = r,
              cols = 1
     )
@@ -73,14 +76,14 @@ f_single_excel <- function(title, info, notes = c(NA), df, sheet, tablename,
   # Applies style to cells of table
   addStyle(new_workbook,
            sheet = sheet,
-           style = chl,
+           style = styles$chl,
            rows = r,
            cols = 1
   )
 
   addStyle(new_workbook,
            sheet = sheet,
-           style = ns,
+           style = styles$ns,
            rows = r + 1:(r + nrow(df)),
            cols = num_cols,
            gridExpand = TRUE
@@ -88,7 +91,7 @@ f_single_excel <- function(title, info, notes = c(NA), df, sheet, tablename,
 
   addStyle(new_workbook,
            sheet = sheet,
-           style = ns_percent,
+           style = styles$ns_percent,
            rows = r + 1:(r + nrow(df)),
            cols = pct_cols,
            gridExpand = TRUE
