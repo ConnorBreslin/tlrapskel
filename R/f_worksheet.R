@@ -12,8 +12,6 @@ f_worksheet <- function(wb,
                         title,
                         outlining,
                         tables) {
-  styles <- f_styles()  # Get styles locally
-
   addWorksheet(wb, sheetName = sheet_name)
 
   r <- 1
@@ -27,7 +25,7 @@ f_worksheet <- function(wb,
     addStyle(wb, sheet_name,
              rows = r,
              cols = 1,
-             style = styles$pt,
+             style = pt,
              gridExpand = TRUE
     )
   } else {
@@ -41,7 +39,7 @@ f_worksheet <- function(wb,
     addStyle(wb, sheet_name,
              rows = (r + 1):length(title),
              cols = 1,
-             style = styles$pt,
+             style = pt,
              gridExpand = TRUE
     )
   }
@@ -70,7 +68,7 @@ f_worksheet <- function(wb,
   )
 
   addStyle(wb, "Contents",
-           style = styles$pt2,
+           style = pt2,
            rows = cr,
            cols = 1
   )
@@ -92,7 +90,7 @@ f_worksheet <- function(wb,
     addStyle(wb, sheet_name,
              rows = r,
              cols = 1,
-             style = styles$pt2
+             style = pt2
     )
 
     if (i == 1) {
@@ -113,7 +111,7 @@ f_worksheet <- function(wb,
     writeDataTable(wb, sheet_name,
                    x = tables[[i]]$data,
                    startRow = r,
-                   headerStyle = styles$ch_lined,
+                   headerStyle = ch_lined,
                    tableStyle = "none",
                    withFilter = FALSE,
                    tableName = table_name,
@@ -124,20 +122,20 @@ f_worksheet <- function(wb,
     addStyle(wb, sheet_name,
              rows = r,
              cols = 1,
-             style = styles$ch_lined_left
+             style = ch_lined_left
     )
 
     addStyle(wb, sheet_name,
              rows = (r + 1):(r + nrow(tables[[i]]$data) - 1),
              cols = 2:(ncol(tables[[i]]$data)),
-             style = styles$ns,
+             style = ns,
              gridExpand = TRUE
     )
 
     addStyle(wb, sheet_name,
              rows = (r + nrow(tables[[i]]$data)),
              cols = 2:(ncol(tables[[i]]$data)),
-             style = styles$ns,
+             style = ns,
              gridExpand = TRUE
     )
 
@@ -145,7 +143,7 @@ f_worksheet <- function(wb,
     addStyle(wb, sheet_name,
              rows = (r + 1):(r + nrow(tables[[i]]$data)),
              cols = 1,
-             style = styles$pt2
+             style = pt2
     )
 
     na_rows <- which(is.na(tables[[i]]$data)) %% nrow(tables[[i]]$data)
@@ -154,7 +152,7 @@ f_worksheet <- function(wb,
     addStyle(wb, sheet_name,
              rows = r + na_rows,
              cols = 1 + na_cols,
-             style = styles$wt,
+             style = wt,
              gridExpand = TRUE
     )
 
