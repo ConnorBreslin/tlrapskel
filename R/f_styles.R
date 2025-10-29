@@ -6,107 +6,170 @@
 #' @description All Excel styles from original Styles.R
 #' @export
 f_styles <- function() {
-  pt <- openxlsx::createStyle(
+  # Styles for Page titles
+  pt <- createStyle(
     textDecoration = "bold",
     fontSize = 15
   )
 
-  pt2 <- openxlsx::createStyle(textDecoration = "bold")
+  pt2 <- createStyle(textDecoration = "bold")
 
   # Styles for column headers
-  ch <- openxlsx::createStyle(
+  ch <- createStyle(
     halign = "right",
     valign = "bottom",
     wrapText = TRUE,
     textDecoration = "bold"
   )
 
-  # Column header (left aligned)
-  chl <- openxlsx::createStyle(
+  ch_lined <- createStyle(
+    halign = "right",
+    valign = "bottom",
+    wrapText = TRUE,
+    textDecoration = "bold",
+    border = "TopBottom",
+    borderStyle = c("thin", "double")
+  )
+
+  ch_lined_left <- createStyle(
+    halign = "left",
+    valign = "bottom",
+    wrapText = TRUE,
+    textDecoration = "bold",
+    border = "TopBottom",
+    borderStyle = c("thin", "double")
+  )
+
+  # Style for column header (left aligned)
+  chl <- createStyle(
     halign = "left",
     valign = "bottom",
     wrapText = TRUE,
     textDecoration = "bold"
   )
 
-  # Column header (center)
-  ch2 <- openxlsx::createStyle(
+  # Style for column header (center)
+  ch2 <- createStyle(
     halign = "center",
     valign = "bottom",
     wrapText = TRUE,
     textDecoration = "bold"
   )
 
-  # Numbers
-  ns <- openxlsx::createStyle(
+  # Style for numbers
+  ns <- createStyle(
     numFmt = "#,##0",
     halign = "right"
   )
 
-  # Decimal numbers
-  nsd <- openxlsx::createStyle(
+  ns_bold <- createStyle(
+    numFmt = "#,##0",
+    halign = "right",
+    textDecoration = "bold"
+  )
+
+  ns_italic <- createStyle(
+    numFmt = "#,##0",
+    halign = "right",
+    textDecoration = "italic",
+    border = "TopBottom",
+    borderStyle = c("thin", "thin")
+  )
+
+  # Style for decimal numbers
+  nsd <- createStyle(
     numFmt = "#,###.##",
     halign = "right"
   )
 
-  ns_comma <- openxlsx::createStyle(
+  ns_comma <- createStyle(
     numFmt = "#,##0",
     halign = "right"
   )
 
-  ns_percent <- openxlsx::createStyle(
+  ns_percent <- createStyle(
     numFmt = "#0.0",
     halign = "right"
   )
 
-  # Alignments
-  ra <- openxlsx::createStyle(halign = "right")
-  la <- openxlsx::createStyle(halign = "left")
+  num_resp <- createStyle(
+    textDecoration = c("bold", "italic"),
+    border = "TopBottom",
+    borderStyle = c("thin", "thin")
+  )
 
-  # Text wrap (contents)
-  tw <- openxlsx::createStyle(wrapText = TRUE)
+  # Style to right align cells
+  ra <- createStyle(halign = "right")
 
-  # Left-aligned text heading
-  h3 <- openxlsx::createStyle(
+  # Style to left align cells
+  la <- createStyle(halign = "left")
+
+  # Style for contents
+  tw <- createStyle(wrapText = TRUE)
+
+  # Style for left aligned text headings
+  h3 <- createStyle(
     halign = "left",
     textDecoration = "bold",
     fontSize = 13
   )
 
-  # Small sample size styles
-  sh <- openxlsx::createStyle(halign = "right", fgFill = "#d3d3d3")
-  sh_comma <- openxlsx::createStyle(halign = "right", fgFill = "#d3d3d3", numFmt = "#,##0")
-  sh_percent <- openxlsx::createStyle(halign = "right", fgFill = "#d3d3d3", numFmt = "#0.0")
+  # small sample size style
+  sh <- createStyle(halign = "right", fgFill = "#d3d3d3")
 
-  # Column headers for maketable
-  hs <- openxlsx::createStyle(
+  sh_comma <- createStyle(halign = "right", fgFill = "#d3d3d3", numFmt = "#,##0")
+
+  sh_percent <- createStyle(halign = "right", fgFill = "#d3d3d3", numFmt = "#0.0")
+
+  # Style for column headers needed for maketable function
+  hs <- createStyle(
     halign = "right",
     wrapText = TRUE,
     textDecoration = "bold"
   )
 
-  hs2 <- openxlsx::createStyle(
+  hs2 <- createStyle(
     halign = "left",
     wrapText = TRUE,
     textDecoration = "bold"
   )
 
-  ts <- openxlsx::createStyle(
+  ts <- createStyle(
     textDecoration = "bold",
     fontSize = 14
   )
 
-  # Return a named list
+  # Size 12 bold style
+  s12_bold <- createStyle(
+    textDecoration = "bold",
+    fontSize = 12,
+    halign = "left"
+  )
+
+  grey <- createStyle(
+    fgFill = "#D9D9D9"
+  )
+
+  # White text
+  wt <- createStyle(
+    fontColour = "#ffffff"
+  )
+
   list(
     pt = pt,
     pt2 = pt2,
     ch = ch,
+    ch_lined = ch_lined,
+    ch_lined_left = ch_lined_left,
     chl = chl,
     ch2 = ch2,
     ns = ns,
+    ns_bold = ns_bold,
+    ns_italic = ns_italic,
     nsd = nsd,
     ns_comma = ns_comma,
     ns_percent = ns_percent,
+    num_resp = num_resp,
     ra = ra,
     la = la,
     tw = tw,
@@ -116,6 +179,9 @@ f_styles <- function() {
     sh_percent = sh_percent,
     hs = hs,
     hs2 = hs2,
-    ts = ts
+    ts = ts,
+    s12_bold = s12_bold,
+    grey = grey,
+    wt = wt
   )
 }
