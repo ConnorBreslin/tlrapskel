@@ -13,7 +13,7 @@
 f_make_tables <- function(data,
                           title,
                           footnotes = NA,
-                          data_style = ns_comma,
+                          data_style = styles$ns_comma,
                           data_dir = here("outputs/figdata")) {
 
   # Sheet name for excel is generated as everything before the : in title
@@ -58,7 +58,7 @@ f_make_tables <- function(data,
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = ts,
+           style = styles$ts,
            rows = r,
            cols = 1
   )
@@ -86,19 +86,19 @@ f_make_tables <- function(data,
                  withFilter = FALSE,
                  bandedRows = FALSE,
                  tableStyle = "none",
-                 headerStyle = hs
+                 headerStyle = styles$hs
   )
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = hs2,
+           style = styles$hs2,
            rows = r,
            cols = 1
   )
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = la,
+           style = styles$la,
            rows = r + seq_len(nrow(data)),
            cols = 1,
            gridExpand = TRUE
