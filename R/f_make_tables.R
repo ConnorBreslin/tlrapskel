@@ -16,6 +16,8 @@ f_make_tables <- function(data,
                           data_style = styles$ns_comma,
                           data_dir = here("outputs/figdata")) {
 
+  styles <- tlrapskel::f_styles()
+
   # Sheet name for excel is generated as everything before the : in title
   sheet <- gsub("(.*):.*", "\\1", title)
 
