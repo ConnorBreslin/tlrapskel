@@ -1,9 +1,9 @@
 # ==============================================================================
 # FILE: R/f_footer.R
 # ==============================================================================
+#' Add footer to page
 #'
-#' @description Generates standardised NISRA footer with links to tools,
-#' corporate pages, social media icons and legal/accessibility information
+#' @description Create footer at bottom of page
 #' @export
 
 f_footer <- function() {

@@ -8,10 +8,4 @@ fn_break_axis(p, linecolor, ref_line = list())
 }
 \description{
 Adds broken axis symbol to plotly charts
-This function will insert a broken axis symbol on the y axis when called.
-It takes three arguments:
-1. p - a plotly object
-2. linecolor - a string containing colour code of axis, you should match the
-   colour defined here to that of the axis lines
-3. ref_line - optional argument, list definition of reference line
 }

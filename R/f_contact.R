@@ -1,12 +1,9 @@
 # ==============================================================================
 # FILE: R/f_contact.R
 # ==============================================================================
+#' Create Contact Information
 #'
-#' @description Creates contact information section -
-#' Lead Statistician
-#' Published By
-#' Telephone number
-#' Email address
+#' @description Creates contact information section
 #' @importFrom htmltools div
 #' @export
 

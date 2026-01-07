@@ -1,10 +1,9 @@
 # ==============================================================================
 # FILE: R/f_styles.R
 # ==============================================================================
+#' Excel Style Definitions
 #'
-#' @description Defines consistent Excel styles for reports including
-#' headers, numbers, alignment, borders and formatting used across workbook
-#' generation functions
+#' @description All Excel styles from original Styles.R
 #' @export
 
 f_styles <- function() {

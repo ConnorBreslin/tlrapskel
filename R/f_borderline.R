@@ -1,9 +1,9 @@
 # ==============================================================================
 # FILE: R/f_borderline.R
 # ==============================================================================
+#' Create Border
 #'
-#' @description Generates a horizontal border line for visual separation
-#' in HTML reports
+#' @description Generates a horizontal border line
 #' @importFrom htmltools div
 #' @export
 

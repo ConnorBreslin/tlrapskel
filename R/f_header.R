@@ -1,9 +1,9 @@
 # ==============================================================================
 # FILE: R/f_header.R
 # ==============================================================================
+#' Create Report Header
 #'
-#' @description Creates report header showing status, publication date
-#' and last updated date; will include pre-release warning if applicable
+#' @description Creates report header with status and publication date
 #' @importFrom htmltools div
 #' @export
 

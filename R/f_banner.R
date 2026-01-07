@@ -1,12 +1,7 @@
-# ==============================================================================
-# FILE: R/f_banner.R
-# ==============================================================================
-#'
-#' @description Creates HTML banner header for statistical reports with
-#' department logos and NISRA branding based on department
-#' @importFrom htmltools div
-#' @export
-
+# ##############################################################################
+# f_banner.R
+# Creates HTML banner header for statistical reports
+# #############################################################################
 
 if (!exists("nics_theme")) {
   departmental_link <- NULL
@@ -35,6 +30,16 @@ if (!exists("nics_theme")) {
 } else {
   departmental_link <- NULL
 }
+
+# ==============================================================================
+# FILE: R/f_banner.R
+# ==============================================================================
+#' Create Report Banner
+#'
+#' @description Creates HTML banner header for statistical reports
+#'
+#' @importFrom htmltools div
+#' @export
 
 f_banner <- function(title, subtitle = "") {
   require(htmltools)

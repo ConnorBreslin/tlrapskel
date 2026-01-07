@@ -1,10 +1,9 @@
 # ==============================================================================
 # FILE: R/f_make_tables.R
 # ==============================================================================
+#' Create Download Tables with Buttons
 #'
-#' @description Creates downloadable CSV and Excel files from data
-#' frames with formatted tables, generates download buttons for
-#' embedding in report
+#' @description Creates CSV and Excel with embedded buttons
 #' @importFrom htmltools div HTML
 #' @importFrom openxlsx createWorkbook modifyBaseFont addWorksheet writeData addStyle writeDataTable setColWidths saveWorkbook
 #' @importFrom janitor clean_names
