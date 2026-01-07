@@ -1,13 +1,14 @@
 # ==============================================================================
 # FILE: R/f_borderline.R
 # ==============================================================================
-#' Create Border
 #'
-#' @description Creates border (exact code from html_formatting.R)
+#' @description Generates a horizontal border line for visual separation
+#' in HTML reports
 #' @importFrom htmltools div
 #' @export
 
 f_borderline <- function() {
+  require(htmltools)
   div(
     div(class = "row", style = "display: flex; margin-top: 15px;
         margin-bottom: 10px"),

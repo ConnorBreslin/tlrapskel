@@ -1,9 +1,10 @@
 # ==============================================================================
 # FILE: R/f_make_tables.R
 # ==============================================================================
-#' Create Download Tables with Buttons
 #'
-#' @description Creates CSV and Excel downloads with embedded buttons
+#' @description Creates downloadable CSV and Excel files from data
+#' frames with formatted tables, generates download buttons for
+#' embedding in report
 #' @importFrom htmltools div HTML
 #' @importFrom openxlsx createWorkbook modifyBaseFont addWorksheet writeData addStyle writeDataTable setColWidths saveWorkbook
 #' @importFrom janitor clean_names
@@ -13,10 +14,12 @@
 f_make_tables <- function(data,
                           title,
                           footnotes = NA,
-                          data_style = styles$ns_comma,
+                          data_style = ns_comma,
                           data_dir = here("outputs/figdata")) {
-
-  styles <- tlrapskel::f_styles()
+  require(openxlsx)
+  require(janitor)
+  require(htmltools)
+  require(xfun)
 
   # Sheet name for excel is generated as everything before the : in title
   sheet <- gsub("(.*):.*", "\\1", title)
@@ -60,7 +63,7 @@ f_make_tables <- function(data,
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = styles$ts,
+           style = ts,
            rows = r,
            cols = 1
   )
@@ -88,19 +91,19 @@ f_make_tables <- function(data,
                  withFilter = FALSE,
                  bandedRows = FALSE,
                  tableStyle = "none",
-                 headerStyle = styles$hs
+                 headerStyle = hs
   )
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = styles$hs2,
+           style = hs2,
            rows = r,
            cols = 1
   )
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = styles$la,
+           style = la,
            rows = r + seq_len(nrow(data)),
            cols = 1,
            gridExpand = TRUE

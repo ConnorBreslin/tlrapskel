@@ -1,13 +1,17 @@
 # ==============================================================================
 # FILE: R/f_contact.R
 # ==============================================================================
-#' Create Contact Information
 #'
-#' @description Creates contact information section
+#' @description Creates contact information section -
+#' Lead Statistician
+#' Published By
+#' Telephone number
+#' Email address
 #' @importFrom htmltools div
 #' @export
 
 f_contact <- function() {
+  require(htmltools)
   div(
     class = "header",
     div(

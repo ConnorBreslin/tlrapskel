@@ -1,9 +1,10 @@
 # ==============================================================================
 # FILE: R/f_worksheet.R
 # ==============================================================================
-#' Add worksheet to Excel table
 #'
-#' @description Add worksheets
+#' @description Adds a formatted worksheet to an Excel workbook
+#' with multiple tables, creates contents page links and
+#' applies consistent styling throughout
 #' @export
 
 f_worksheet <- function(wb,

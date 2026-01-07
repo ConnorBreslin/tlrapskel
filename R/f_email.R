@@ -1,9 +1,9 @@
 # ==============================================================================
 # FILE: R/f_email.R
 # ==============================================================================
-#' Used by f_contact
 #'
-#' @description Create email mailto link
+#' @description Creates a simple mailto: hyperlink for email addresses
+#' in HTML output
 #' @importFrom htmltools div
 #' @export
 

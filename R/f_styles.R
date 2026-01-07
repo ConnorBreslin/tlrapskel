@@ -1,10 +1,12 @@
 # ==============================================================================
 # FILE: R/f_styles.R
 # ==============================================================================
-#' Excel Style Definitions
 #'
-#' @description All Excel styles from original Styles.R
+#' @description Defines consistent Excel styles for reports including
+#' headers, numbers, alignment, borders and formatting used across workbook
+#' generation functions
 #' @export
+
 f_styles <- function() {
   # Styles for Page titles
   pt <- createStyle(
@@ -82,6 +84,7 @@ f_styles <- function() {
     halign = "right"
   )
 
+
   ns_comma <- createStyle(
     numFmt = "#,##0",
     halign = "right"
@@ -113,7 +116,6 @@ f_styles <- function() {
     textDecoration = "bold",
     fontSize = 13
   )
-
   # small sample size style
   sh <- createStyle(halign = "right", fgFill = "#d3d3d3")
 

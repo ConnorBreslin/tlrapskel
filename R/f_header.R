@@ -1,15 +1,16 @@
 # ==============================================================================
 # FILE: R/f_header.R
 # ==============================================================================
-#' Create Report Header
 #'
-#' @description Creates report header with status and publication date
+#' @description Creates report header showing status, publication date
+#' and last updated date; will include pre-release warning if applicable
 #' @importFrom htmltools div
 #' @export
 
 f_header <- function() {
+  require(htmltools)
   div(
-    class = "header",
+    # class = "header",
     if (prerelease == TRUE) {
       div(
         class = "prerelease-stripes", ".",
@@ -45,15 +46,15 @@ f_header <- function() {
     div(
       class = "row", style = "display:flex",
       div(
-        style = "width: 60%; padding-left:15px; font-size: 120%;",
+        style = "width: 60%; padding-left:10px; font-size: 120%;",
         p(strong("Status: "), statistic_type_text)
       ),
       div(
-        style = "width: 40%; font-size: 120%;",
+        style = "width: 60%; padding-left:15px; font-size: 120%;",
         p(strong("Publication date: "), pub_date_words_dmy)
       ),
       div(
-        style= "Width: 60%; padding-left:15px; font-size: 120%",
+        style= "Width: 60%; padding-left:10px; font-size: 120%",
         p(strong("Last updated: "), last_updated_formatted)
       )
     )

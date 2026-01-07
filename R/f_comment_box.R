@@ -1,9 +1,9 @@
 # ==============================================================================
 # FILE: R/f_comment_box.R
 # ==============================================================================
-#' Create comment box
 #'
-#' @description Create comment box
+#' @description  Creates comment boxes for draft reports to display warnings or
+#' comments: hidden when report_final flag is true
 #' @export
 
 f_comment_box <- function(colour_style = "red", text_words = NA) {
