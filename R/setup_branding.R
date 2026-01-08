@@ -76,6 +76,12 @@ setup_branding <- function(env = parent.frame()) {
 
 
   # Assign all variables to the calling environment
+  assign("nisra_logo", nisra_logo, envir = env)
+  assign("nisra_alt", nisra_alt, envir = env)
+  assign("dep_logo", dep_logo, envir = env)
+  assign("dep_alt", dep_alt, envir = env)
+  assign("acc_official_stats", acc_official_stats, envir = env)
+  assign("nat_alt", nat_alt, envir = env)
   assign("nisra_green_decoration", nisra_green_decoration, envir = env)
   assign("nisra_blue", nisra_blue, envir = env)
   assign("nisra_navy", nisra_navy, envir = env)
