@@ -6,7 +6,7 @@
 #' @description NISRA colors and logos setup
 #' @export
 
-setup_branding <- function() {
+setup_branding <- function(env = parent.frame()) {
 
   #### NISRA COLOURS AND LOGOS ####
   ##### LOGOS #####
@@ -73,6 +73,24 @@ setup_branding <- function() {
   ons_green <- "#28a197"
   ons_red <- "#801650"
   ons_orange <- "#f46a25"
+
+
+  # Assign all variables to the calling environment
+  assign("nisra_green_decoration", nisra_green_decoration, envir = env)
+  assign("nisra_blue", nisra_blue, envir = env)
+  assign("nisra_navy", nisra_navy, envir = env)
+  assign("nisra_col3_green", nisra_col3_green, envir = env)
+  assign("nisra_col4_purple", nisra_col4_purple, envir = env)
+  assign("nisra_col5_lilac", nisra_col5_lilac, envir = env)
+  assign("nisra_col6_olive", nisra_col6_olive, envir = env)
+  assign("nisra_col7_brown", nisra_col7_brown, envir = env)
+  assign("nisra_col8_slate", nisra_col8_slate, envir = env)
+  assign("nisra_col9_pink", nisra_col9_pink, envir = env)
+  assign("nista_col10_burgandy", nista_col10_burgandy, envir = env)
+  assign("ons_blue", ons_blue, envir = env)
+  assign("ons_green", ons_green, envir = env)
+  assign("ons_red", ons_red, envir = env)
+  assign("ons_orange", ons_orange, envir = env)
 
   invisible()
 }
