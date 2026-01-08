@@ -20,6 +20,9 @@ f_make_tables <- function(data,
   require(htmltools)
   require(xfun)
 
+  # Get styles
+  styles <- f_styles()
+
   # Sheet name for excel is generated as everything before the : in title
   sheet <- gsub("(.*):.*", "\\1", title)
 
@@ -62,7 +65,7 @@ f_make_tables <- function(data,
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = ts,
+           style = styles$ts,
            rows = r,
            cols = 1
   )
@@ -90,19 +93,19 @@ f_make_tables <- function(data,
                  withFilter = FALSE,
                  bandedRows = FALSE,
                  tableStyle = "none",
-                 headerStyle = hs
+                 headerStyle = styles$hs
   )
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = hs2,
+           style = styles$hs2,
            rows = r,
            cols = 1
   )
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = la,
+           style = styles$la,
            rows = r + seq_len(nrow(data)),
            cols = 1,
            gridExpand = TRUE
@@ -111,7 +114,7 @@ f_make_tables <- function(data,
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = data_style,
+           style = styles$data_style,
            rows = r + seq_len(nrow(data)),
            cols = 2:ncol(data),
            gridExpand = TRUE
