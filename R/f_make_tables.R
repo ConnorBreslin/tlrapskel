@@ -13,7 +13,7 @@
 f_make_tables <- function(data,
                           title,
                           footnotes = NA,
-                          data_style = ns_comma,
+                          data_style = NULL,
                           data_dir = here("outputs/figdata")) {
   require(openxlsx)
   require(janitor)
@@ -22,6 +22,11 @@ f_make_tables <- function(data,
 
   # Get styles
   styles <- f_styles()
+
+  # if no data_style provided use ns_comma as default
+  if (is.null(data_style)) {
+    data_style <- styles$ns_comma
+  }
 
   # Sheet name for excel is generated as everything before the : in title
   sheet <- gsub("(.*):.*", "\\1", title)
