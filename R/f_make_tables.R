@@ -114,7 +114,7 @@ f_make_tables <- function(data,
 
   addStyle(wb,
            sheet = as.character(sheet),
-           style = styles$data_style,
+           style = data_style,
            rows = r + seq_len(nrow(data)),
            cols = 2:ncol(data),
            gridExpand = TRUE
